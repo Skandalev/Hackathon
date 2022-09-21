@@ -1,13 +1,18 @@
-import TemporaryDrawer from './components ofek/navbar';
-import './App.css';
-import Home from './componentsHome/Home';
-import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 
+import './App.css';
+import Home from './Pages/Home';
+import 'mdb-react-ui-kit/dist/css/mdb.min.css'
+import { Route, Routes, useRoutes,BrowserRouter } from 'react-router-dom';
+import Form from './ReportComponents/Form';
 
 function App() {
   return (
     <div className="App">
-     <TemporaryDrawer></TemporaryDrawer><Home></Home>
+      <BrowserRouter>
+      <Routes>
+      <Route path="/" element={<Form/>}/>
+     </Routes>
+     </BrowserRouter>
     </div>
   );
 }
