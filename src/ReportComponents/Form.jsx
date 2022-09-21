@@ -1,47 +1,78 @@
 import { useState } from "react";
-import Select from './Select';
-import Adress from './Adress';
-import Picture from './Picture';
-import Details from './Details';
-
+import SelectInReport from "./selectInReport";
+import Adress from "./Adress";
+import Picture from "./Picture";
+import Details from "./Details";
+import { useDispatch } from "react-redux";
+import { updateReport , updateRequest} from "../reportSlicer";
+import { Link } from "react-router-dom";
 export default function Form() {
   let [page, setPage] = useState(0);
   const FormPage = ["select", "picture", "adress", "details"];
-  const pageContainer = ()=>{
-if (page === 0 ) {
-    return<Select/>
-}
-else if(page === 1 ) {
-    return<Picture/>
-}
-else if(page === 2 ) {
-    return<Adress/>
-}
-else if(page === 3 ) {
-    return<Details/>
-}
-  }
+  const pageContainer = () => {
+    if (page === 0) {
+      return <selectInReport />;
+    } else if (page === 1) {
+      return <Picture />;
+    } else if (page === 2) {
+      return <Adress />;
+    } else if (page === 3) {
+      return <Details />;
+    }
+  };
+
+  const handleSubmition = (values) => {
+    const value = {
+      selectReport: values.selectReport,
+      picture: values.picture,
+      adress: values.adress,
+      email: values.email,
+      phone: values.phone,
+      fullName: values.fullName,
+    };
+    dispatch(updateReport(value), updateRequest(value));
+  };
+  const dispatch = useDispatch();
+
   return (
     <div>
       <div>{FormPage[page]}</div>
       <div>{pageContainer()}</div>
       <button
-        disabled={(page = FormPage.length - 1)}
+        disabled={page === 0}
         onClick={() => setPage((currPage) => currPage - 1)}
       >
         previus
       </button>
-      <button
-        onClick={()=>{
+      {page === 3 ? (
+         <Link to="/">
+        <button
+          onSubmit={(values) => handleSubmition(values)}
+          onClick={() => {
             if (page === FormPage.lenght - 1) {
-                alert ("submitted")
+              alert("FORM SUBMITTED");
+              console.log(FormPage);
+            } else {
+              setPage((currPage) => currPage + 1);
             }
-            else{
-                setPage((currPage)=> currPage + 1)
-            }}}
-            >
-            {page === 3 ? "submit" : "next"}
-      </button>
+          }}
+        >
+          Submit
+        </button></Link>
+      ) : (
+        <button
+          onClick={() => {
+            if (page === FormPage.lenght - 1) {
+              alert("FORM SUBMITTED");
+              console.log(FormPage);
+            } else {
+              setPage((currPage) => currPage + 1);
+            }
+          }}
+        >
+          Next
+        </button>
+      )}
     </div>
   );
 }

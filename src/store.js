@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import  ProfileReducer  from "./ProfileSlice"
+import  ReportReducer  from "./reportSlicer"
 
 
 export default configureStore({
     reducer : {
-        report : ReportSlicer
+        report : ReportReducer
     }
 })

@@ -10,7 +10,8 @@ function App() {
     <div className="App">
       <BrowserRouter>
       <Routes>
-      <Route path="/" element={<Form/>}/>
+      <Route path="/Form" element={<Form/>}/>
+      <Route path="/" element={<Home/>}/>
      </Routes>
      </BrowserRouter>
     </div>
