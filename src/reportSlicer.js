@@ -8,64 +8,43 @@ export const ReportSlicer = createSlice({
       selectReport: "",
       photo: "",
       address: "",
-      fullName: "ofek yehoshua",
-      email: "yehoshuaofek@gmail.com",
-      phone: "0526766563",
+      fullName: "",
+      email: "",
+      phone: "",
     },
     request: {
       description:"",
       photo: "",
       address: "",
-      fullName: "ofek yehoshua",
-      email: "yehoshuaofek@gmail.com",
-      phone: "0526766563",
+      fullName: "",
+      email: "",
+      phone: "",
     },
-
-
   },
 
   reducers: {
     updateReport: (state, values) => {
       console.log(values.payload)
       state.report.selectReport = values.payload.selectReport;
-      state.profile.lastName = values.payload.lastName;
-      state.profile.email = values.payload.email;
-      state.profile.date = values.payload.date;
+      state.report.picture = values.payload.picture;
+      state.report.adress = values.payload.adress;
+      state.report.email = values.payload.email;
+      state.report.phone = values.payload.phone;
+      state.report.fullName = values.payload.fullName;
     },
 
     updateRequest: (state, values) => {
-      state.socials.address = values.payload.address;
-      state.socials.linkedIn = values.payload.linkedIn;
-      state.socials.facebook = values.payload.facebook;
-      state.socials.twitter = values.payload.twitter;
-      state.socials.instegram = values.payload.instegram;
+      state.report.description = values.payload.description;
+      state.report.picture = values.payload.picture;
+      state.report.adress = values.payload.adress;
+      state.report.email = values.payload.email;
+      state.report.phone = values.payload.phone;
+      state.report.fullName = values.payload.fullName;
     },
 
-    updateUser: (state, values) => {
-      if( values.payload.email === state.profile.email && values.payload.password == state.profile.password){
-        state.user.email = values.payload.email;
-        state.user.password = values.payload.password;
-      }
-    },
-
-    logout: (state) => {
-      state.user.email = ""
-      state.user.password = ""
-    },
-
-    updatePayment: (state, values) => {
-      console.log(values.payload)
-      state.payment.cardName = values.payload.cardName;
-      state.payment.cardNumber = values.payload.cardNumber;
-      state.payment.expireDate = values.payload.expireDate;
-      state.payment.Cvv = values.payload.Cvv;
-    }
   },
 });
 
-export const { update, updateSocials, updateUser, updatePayment,logout } = ProfileSlice.actions;
-export const selectProfile = (state) => state.profile.profile;
-export const selectSocials = (state) => state.profile.socials;
-export const selectUser = (state) => state.profile.user;
-export const selectPayment = (state) => state.profile.payment;
+export const { updateReport, updateRequest} = ReportSlicer.actions;
+export const selectReport = (state) => state.profile.profile;
 export default ReportSlicer.reducer;
