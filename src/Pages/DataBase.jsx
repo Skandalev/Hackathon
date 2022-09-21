@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import axios from "axios";
 
-function DataBase() {
+function DataBase(props) {
   const [todoArray, setTodoArray] = useState([]);
   const [newTodo, setNewTodo] = useState("");
 
@@ -15,7 +15,7 @@ function DataBase() {
   };
   // picture:"" , adress:"", email:"", phone:"", fullName:""
   const postTodo = () => {
-    const todo = { action: newTodo, email: "yewaa", picture:"https://res.cloudinary.com/dumgi49os/image/upload/cld-sample-5.jpg" , adress:"222", phone:"333", fullName:"444"
+    const todo = { action: newTodo, email: "yewaa", picture:props.imageChanger , adress:"222", phone:"333", fullName:"444"
                   
      };
     console.log(todo);
