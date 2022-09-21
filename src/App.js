@@ -1,4 +1,4 @@
-
+import TemporaryDrawer from './components/navbar';
 import './App.css';
 import Home from './Pages/Home';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'
