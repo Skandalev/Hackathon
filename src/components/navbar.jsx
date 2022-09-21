@@ -8,13 +8,13 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
+
 import MailIcon from '@mui/icons-material/Mail';
 import "./navbar.css"
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
-import ContactPhoneOutlinedIcon from '@mui/icons-material/ContactPhoneOutlined';
+
 import HistoryOutlinedIcon from '@mui/icons-material/HistoryOutlined';
 
 export default function TemporaryDrawer() {
