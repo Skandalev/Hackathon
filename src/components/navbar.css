@@ -1,4 +1,13 @@
-.listItems{
-    margin: 15%;
-
+.listItems {
+  margin: 15%;
+}
+.navbox {
+  position: absolute;
+  padding: 0%;
+  margin-left: 95%;
+  width: 10px;
+  color: black;
+  position: fixed !important;
+  top: 0;
+  z-index: 100;
 }

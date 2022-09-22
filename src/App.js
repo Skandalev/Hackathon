@@ -6,13 +6,14 @@ import { Route, Routes, useRoutes,BrowserRouter } from 'react-router-dom';
 import Form from './ReportComponents/Form';
 
 
+
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
       <Routes>
-      <Route path="/Form" element={<Form/>}/>
       <Route path="/" element={<Home></Home>}/>
+      <Route path="/Form" element={<Form/>}/>
      </Routes>
      </BrowserRouter>
     </div>

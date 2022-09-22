@@ -68,8 +68,8 @@ export default function TemporaryDrawer() {
   );
 
   return (
-    <rtl>
-    <div >
+    
+    <div className='navbox'>
       {[""].map((anchor) => (
         <React.Fragment key={anchor} >
           <Button className='sideButton' onClick={toggleDrawer(anchor, true)}> <MenuOutlinedIcon/> </Button>
@@ -83,6 +83,6 @@ export default function TemporaryDrawer() {
         </React.Fragment>
       ))}
     </div>
-    </rtl>
+   
   );
 }
