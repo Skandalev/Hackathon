@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-
+import Button from '@mui/material/Button';
 import axios from "axios";
-
+import './database.css'
 function DataBase(props) {
   const [todoArray, setTodoArray] = useState([]);
   const [newTodo, setNewTodo] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
 
   const getTodos = () => {
     axios.get("/api/todos").then((res) => {
@@ -40,6 +41,7 @@ function DataBase(props) {
     getTodos();
   }, []);
   const addToDo = () => {
+    setIsOpen(true)
     postTodo();
     let newlist = [...todoArray];
     if (newTodo.length > 0) {
@@ -61,41 +63,45 @@ function DataBase(props) {
   }
   return (
     <div className="DataBase">
-      <input
-        onChange={(e) => {
-          setNewTodo(e.target.value);
-        }}
-      ></input>
-      <button
+      <Button
+      variant="contained"
         onClick={() => {
           addToDo();
         }}
       >
-        submit
-      </button>
-      {newTodo}
-
+        אישור
+      </Button>
+      {/* <input
+        onChange={(e) => {
+          setNewTodo(e.target.value);
+        }}
+      ></input>
+      
+      {newTodo} */}
+{isOpen&&
       <ul>
         {todoArray.map((e, i) => {
           return (
-            <li key={e._id}>
+            <li style={{listStyleType:null}} key={e._id}>
+              {e.fullName}
+              <br />
               {e.action}
               <br />
               {e.email}
               <br />
                {e.picture} 
-               <img style={{width:"20vw"}} src= {e.picture} alt="" sizes="" srcset="" />
-              <button
+               <img style={{width:"20vw"}} src= {e.picture} alt="" sizes="" t="" />
+              <Button variant="error"
                 onClick={() => {
                   delete1(i,e._id);
                 }}
               >
                 X
-              </button>{" "}
+              </Button>{" "}
             </li>
           );
         })}
-      </ul>
+      </ul>}
     </div>
   );
 }

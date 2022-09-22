@@ -3,7 +3,7 @@ import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import ButtonBase from "@mui/material/ButtonBase";
 import Typography from "@mui/material/Typography";
-import { Link } from "react-router-dom";
+
 import "./selectnew.css";
 
 const images = [
@@ -17,7 +17,7 @@ const images = [
     url: "https://static01.nyt.com/images/2020/04/22/nyregion/22nyvirus-cityworkersNEW1/22nyvirus-cityworkersNEW1-mobileMasterAt3x.jpg",
     title: "דיווח על מפגע",
     width: "50%",
-    link: "form"
+    link: ""
   },
 ];
 
@@ -86,13 +86,14 @@ const ImageMarked = styled("span")(({ theme }) => ({
   transition: theme.transitions.create("opacity"),
 }));
 
-export default function SelectNew() {
+export default function SelectNew(props) {
   return (
     <Box
       sx={{ display: "flex", flexWrap: "wrap", minWidth: 300, width: "100%" }}
     >
       {images.map((image) => (
           <ImageButton
+          onClick={()=>{props.setSetIsOpenS(true)}}
           className="box"
           focusRipple
           key={image.title}
@@ -102,7 +103,7 @@ export default function SelectNew() {
         >
           <ImageSrc style={{ backgroundImage: `url(${image.url})` }} />
           <ImageBackdrop className="MuiImageBackdrop-root" />
-            <Link to={`/${image.link}`}>
+          
           <Image>
               <Typography
                 component="span"
@@ -119,7 +120,7 @@ export default function SelectNew() {
                 <ImageMarked className="MuiImageMarked-root" />
               </Typography>
           </Image>
-            </Link>
+            
         </ImageButton>
       ))}
     </Box>
