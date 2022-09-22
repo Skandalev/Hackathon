@@ -23,46 +23,30 @@ function Home() {
     email: "",
     adress: "",
     action: "",
-    picture: "",
+   picture: "",
   });
   
+  const [isOpen,setSetIsOpen]= useState(false)
+  const [isOpenS,setSetIsOpenS]= useState(false)
+  const [imageSelected,setImageSelected]=useState("")
   return (
     <div className="Home">
-      
-      <div className="frontBackground">
-        <a href="./" className="mobile-logo">
-        <img  data-aos="fade-down"
-            className="img"
-            src="https://www.dimona.muni.il/content/images/logo.png"
-            alt="לוגו דימונה"
-          />
-        </a>
-        <h1 data-aos="zoom-in">מפגעים והצעות ייעול במרחב הציבורי</h1>
-        <br />
-        <h3 data-aos="zoom-in"> דף ההתקשרות הרשמי </h3>
-        <br />
-          <Mount></Mount>
-      
-      </div>
-      <SelectNew></SelectNew>
-      <Details
-        setarrayTodata={setarrayTodata}
-        imageChanger={imageChanger}
-        setImageChanger={setImageChanger}
-      ></Details>
-      <Button variant="contained"> דיווח או הצעה</Button>
-      <h3> פניות קודמות</h3>
-      <Image
-        setImageChanger={setImageChanger}
-        imageChanger={imageChanger}
-      ></Image>
-      <DataBase
-        imageChanger={imageChanger}
-        arrayTodata={arrayTodata}
-      ></DataBase>
-      <CustomizedSnackbars/>
-     <MultiActionAreaCard></MultiActionAreaCard>
-      <Footer></Footer>
+      <TemporaryDrawer/>
+        <a href="./" className='mobile-logo'>
+			<img src="https://www.dimona.muni.il/content/images/logo.png" alt="לוגו דימונה"/>
+		</a>
+        <h1>מפגעים והצעות ייעול במרחב הציבורי</h1>
+        <h3> תדווחו על מפגעים, תציעו הצעות ייעול</h3>
+        <h3>אנחנו נדאג לשאר</h3>
+        <SelectNew setSetIsOpenS={setSetIsOpenS}></SelectNew>
+        {isOpenS&&
+        <Details setSetIsOpen={setSetIsOpen} setarrayTodata={setarrayTodata} imageChanger={imageChanger} setImageChanger={setImageChanger}></Details>
+         }
+        {/* <Image imageSelected={imageSelected} setImageSelected={setImageSelected}  setImageChanger={setImageChanger} imageChanger={imageChanger}></Image> */}
+        {isOpen&&
+        <DataBase imageChanger={imageChanger} arrayTodata={arrayTodata}></DataBase>
+        }
+        <Footer></Footer>
     </div>
   );
 }
