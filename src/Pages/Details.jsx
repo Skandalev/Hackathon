@@ -6,6 +6,7 @@ import Axios from 'axios'
 import { useState } from 'react';
 
 const Details = (props)=>{
+  
   const [imageSelected,setImageSelected]=useState("")
   const [imageChanger,setImageChanger]=useState("")
   const uploadImage=()=>{
@@ -36,13 +37,14 @@ const Details = (props)=>{
           password:'',
           profession: professions[0],
           age: '',
+          picture:imageChanger
         },
-        onSubmit: function (values) {
-          uploadImage()
-          props.setarrayTodata({fullName:values.name,email:values.email, adress:values.password,action: values.profession, picture:imageChanger})
+        onSubmit: function (values,{resetForm}) {
+           uploadImage()
+          imageChanger && props.setarrayTodata({fullName:values.name,email:values.email, adress:values.password,action: values.profession, picture:imageChanger})
           alert(`You are registered! Name: ${values.name}. Email: ${values.email}. problem: ${values.profession}. 
-            Age: ${values.age}`);
-          
+             ${values.age}`);
+          resetForm({values: ""})
            
         },
         validationSchema: Yup.object({
@@ -50,12 +52,12 @@ const Details = (props)=>{
                     .required('שם מלא חובה'),
             email: Yup.string()
                     .email('אימייל חובה')
-                    .required(),
+                    .required("אימייל"),
             profession: Yup.string()
                         .oneOf(professions, 'The profession you chose does not exist'),
           
             password: Yup.string()
-                  .min(7,"password must have more then 7 digits")      
+                  .required('כתובת חובה')     
                       
 
           })
@@ -130,6 +132,7 @@ const Details = (props)=>{
         <div className='text-center'>
           <Button className='bg-blue-500 rounded p-3 text-white' type='submit'  variant="contained"  onClick={()=>{props.setSetIsOpen(true)}}>שליחה</Button>
         </div>
+       
       </form>
     </div>
 
