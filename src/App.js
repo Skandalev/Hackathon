@@ -5,13 +5,14 @@ import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 import { Route, Routes, useRoutes,BrowserRouter } from 'react-router-dom';
 import Form from './ReportComponents/Form';
 
+
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
       <Routes>
-      <Route path="/Form" element={<Home/>}/>
-      <Route path="/" element={<Home/>}/>
+      <Route path="/Form" element={<Form/>}/>
+      <Route path="/" element={<Home></Home>}/>
      </Routes>
      </BrowserRouter>
     </div>

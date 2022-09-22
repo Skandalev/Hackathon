@@ -15,12 +15,10 @@ function DataBase(props) {
   };
   // picture:"" , adress:"", email:"", phone:"", fullName:""
   const postTodo = () => {
-    const todo = { action: newTodo, email: "yewaa", picture:props.imageChanger , adress:"222", phone:"333", fullName:"444"
-                  
-     };
+    const todo = props.arrayTodata
     console.log(todo);
     axios.post("/api/todos", todo).then((res) => {
-      res.data && setNewTodo("");
+      // res.data && setNewTodo("");
       
     });
     axios.get("/api/todos").then((res) => {
