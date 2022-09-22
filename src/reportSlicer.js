@@ -3,11 +3,10 @@ import { createSlice } from "@reduxjs/toolkit";
 export const ReportSlicer = createSlice({
   name: "report",
   initialState: {
-    selectEvent:true,
-    report: {
+    reportData: {
       selectReport: "",
       photo: "",
-      address: "",
+      adress: "",
       fullName: "",
       email: "",
       phone: "",
@@ -15,11 +14,12 @@ export const ReportSlicer = createSlice({
     request: {
       description:"",
       photo: "",
-      address: "",
+      adress: "",
       fullName: "",
       email: "",
       phone: "",
     },
+    // test: ""
   },
 
   reducers: {
@@ -46,5 +46,5 @@ export const ReportSlicer = createSlice({
 });
 
 export const { updateReport, updateRequest} = ReportSlicer.actions;
-export const selectReport = (state) => state.profile.profile;
+export const selectReport = (state) => state.report.reportData;
 export default ReportSlicer.reducer;

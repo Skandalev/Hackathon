@@ -4,7 +4,7 @@ import Adress from "./Adress";
 import Picture from "./Picture";
 import Details from "./Details";
 import { useDispatch } from "react-redux";
-import { updateReport , updateRequest} from "../reportSlicer";
+import { updateReport , updateRequest} from "../ReportSlicer";
 import { Link } from "react-router-dom";
 export default function Form() {
   let [page, setPage] = useState(0);

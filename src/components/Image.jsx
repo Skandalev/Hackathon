@@ -3,7 +3,7 @@ import Axios from 'axios'
 import { useState } from 'react';
 function Image(props) {
   const [imageSelected,setImageSelected]=useState("")
-  
+
   const uploadImage=()=>{
     const formData=new FormData()
     formData.append('file',imageSelected)
@@ -16,7 +16,7 @@ function Image(props) {
     <div className="App">
          <input type="file" onChange={(event)=>setImageSelected(event.target.files[0])}></input>
          <button onClick={()=>uploadImage()}>submit</button>
-         <img src={props.imageChanger} style={{width:"10vw"}} alt="" srcset="" />
+         <img src={props.imageChanger} alt="" srcset="" style={{width:"10vw"}} />
     </div>
   );
 }

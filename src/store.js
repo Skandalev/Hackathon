@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import  ReportReducer  from "./reportSlicer"
+import  ReportReducer  from "./ReportSlicer"
 
 
 export default configureStore({
