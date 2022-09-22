@@ -15,6 +15,7 @@ function DataBase(props) {
     });
   };
   // picture:"" , adress:"", email:"", phone:"", fullName:""
+ 
   const postTodo = () => {
     const todo = props.arrayTodata
     console.log(todo);
@@ -82,14 +83,14 @@ function DataBase(props) {
       <ul>
         {todoArray.map((e, i) => {
           return (
-            <li style={{listStyleType:null}} key={e._id}>
-              {e.fullName}
+            <li key={e._id}>
+              {e.name}
               <br />
               {e.action}
               <br />
               {e.email}
               <br />
-               {e.picture} 
+               {e.adress} 
                <img style={{width:"20vw"}} src= {e.picture} alt="" sizes="" t="" />
               <Button variant="error"
                 onClick={() => {
