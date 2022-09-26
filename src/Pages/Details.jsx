@@ -9,14 +9,15 @@ const Details = (props)=>{
   
   const [imageSelected,setImageSelected]=useState("")
   const [imageChanger,setImageChanger]=useState("")
-  const uploadImage=()=>{
+  // function uploadImage(){
     const formData=new FormData()
     formData.append('file',imageSelected)
     formData.append('upload_preset',"xol71jb0")
 
     Axios.post("https://api.cloudinary.com/v1_1/dumgi49os/image/upload",formData)
     .then((response)=>setImageChanger(response.data.secure_url))
-  }
+  
+  // }
 
     const professions = [  'פינוי ערימת גזם',
     'פינוי ערימת אשפה',
@@ -37,14 +38,15 @@ const Details = (props)=>{
           password:'',
           profession: professions[0],
           age: '',
-          picture:imageChanger
+          picture:''
         },
         onSubmit: function (values,{resetForm}) {
-           uploadImage()
-          imageChanger && props.setarrayTodata({fullName:values.name,email:values.email, adress:values.password,action: values.profession, picture:imageChanger})
+          //  uploadImage()
+           console.log(imageChanger);
+           props.setarrayTodata({fullName:values.name,email:values.email, adress:values.password,action: values.profession, picture:imageChanger})
           alert(`You are registered! Name: ${values.name}. Email: ${values.email}. problem: ${values.profession}. 
              ${values.age}`);
-          resetForm({values: ""})
+          // resetForm({values: ""})
            
         },
         validationSchema: Yup.object({
