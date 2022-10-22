@@ -6,6 +6,7 @@ import { useState,useEffect } from 'react';
 const Details = (props)=>{ 
   const [imageSelected,setImageSelected]=useState("")
   const [imageChanger,setImageChanger]=useState("")
+  
   useEffect(() => {
     uploadImage()
   }, [imageSelected])
@@ -126,8 +127,9 @@ const Details = (props)=>{
      {/* onBlur={formik.handleBlur} value={formik.values.age} */}
          {/* <input type="file" onChange={formik.handleChange}></input> */}
          {/* <button onClick={()=>uploadImage()}>submit</button> */}
-
-         <img src={imageChanger} alt="" srcSet="" style={{width:"10vw"}} />
+         {console.log(imageSelected)}
+        {imageChanger? <img src={imageChanger} alt="" srcSet="" style={{width:"10vw"}} />: <h5>  תקחו עד שהתמונה תופיע כאן במקום הכיתוב הזה</h5> }
+        
            
           {formik.touched.age && formik.errors.age && ( 
             <span className='text-red-400'><br />{formik.errors.age}</span>
