@@ -16,7 +16,7 @@ function Image() {
     <div className="App">
          <input type="file" onChange={(event)=>setImageSelected(event.target.files[0])}></input>
          <button onClick={()=>uploadImage()}>submit</button>
-         <img src={imageChanger} alt="" srcset="" style={{width:"10vw"}} />
+         <img src={imageChanger} alt="" srcSet="" style={{width:"10vw"}} />
     </div>
   );
 }
@@ -44,7 +44,7 @@ export default Image;
 //     <div className="App">
 //          <input type="file" onChange={(event)=>setImageSelected(event.target.files[0])}></input>
 //          <button onClick={()=>uploadImage()}>submit</button>
-//          <img src={imageChanger} alt="" srcset="" style={{width:"10vw"}} />
+//          <img src={imageChanger} alt="" srcSet="" style={{width:"10vw"}} />
 //     </div>
 //   );
 // }

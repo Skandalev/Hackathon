@@ -122,7 +122,7 @@ function Home() {
 
  <SelectNew setSetIsOpenS={setSetIsOpenS}></SelectNew>
         {isOpenS&&
-        <Details setSetIsOpen={setSetIsOpen} setarrayTodata={setarrayTodata} imageChanger={imageChanger} setImageChanger={setImageChanger}></Details>
+        <Details setSetIsOpen={setSetIsOpen} setarrayTodata={setarrayTodata} imageChanger={imageChanger} setImageChanger={setImageChanger} arrayTodata={arrayTodata}></Details>
          }
         {/* <Image imageSelected={imageSelected} setImageSelected={setImageSelected}  setImageChanger={setImageChanger} imageChanger={imageChanger}></Image> */}
         {isOpen&&
