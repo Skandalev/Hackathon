@@ -33,7 +33,7 @@ function Picture() {
          <input type="file" onChange={(event)=>setImageSelected(event.target.files[0])}></input>
          <button onClick={()=>uploadImage()}>submit</button>
          <AddAPhotoIcon sx={{ fontSize: 200}} color="primary"> </AddAPhotoIcon>
-         <img src={imageSave} style={{width:"10vw"}} alt="" srcset="" />
+         <img src={imageSave} style={{width:"10vw"}} alt="" srcSet="" />
     </div>
   );
 }

@@ -26,7 +26,7 @@ export const ReportSlicer = createSlice({
     updateReport: (state, values) => {
       console.log(values.payload)
       state.report.selectReport = values.payload.selectReport;
-      state.report.picture = values.payload.picture;
+      state.reportData.picture = values.payload.picture;
       state.report.adress = values.payload.adress;
       state.report.email = values.payload.email;
       state.report.phone = values.payload.phone;

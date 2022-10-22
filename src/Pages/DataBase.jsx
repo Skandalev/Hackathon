@@ -4,7 +4,7 @@ import axios from "axios";
 import './database.css'
 function DataBase(props) {
   const [todoArray, setTodoArray] = useState([]);
-  const [newTodo, setNewTodo] = useState("");
+  // const [newTodo, setNewTodo] = useState("");
   const [isOpen, setIsOpen] = useState(false);
 
   const getTodos = () => {
@@ -44,14 +44,15 @@ function DataBase(props) {
   const addToDo = () => {
     setIsOpen(true)
     postTodo();
-    let newlist = [...todoArray];
-    if (newTodo.length > 0) {
+    // let newlist = [...todoArray];
+    // setTodoArray(todoArray);
+    // if (newTodo.length > 0) {
      
-      newlist.push(newTodo);
-      setTodoArray(newlist);
-    } else {
-      setTodoArray(todoArray);
-    }
+    //   newlist.push(newTodo);
+    //   setTodoArray(newlist);
+    // } else {
+    //   setTodoArray(todoArray);
+    // }
   };
 
 
