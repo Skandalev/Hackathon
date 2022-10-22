@@ -1,70 +1,102 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Dimona municipality hackathon 2022 Project
+Mern application for the Dimona municipality made in hackathon.
 
-## Available Scripts
+Open source. You are welcome!
 
-In the project directory, you can run:
 
-### `npm start`
+## Table of Content
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. [ Description ](#Description)
+2. [ Netlify Demo ](#Demo)
+3. [ How to Use ](#use)
+4. [ Pictures ](#Pictures)
+5. [ Built with ](#Builtwith)
+6. [ To-do ](#To-do)
+7. [ Author ](#Author)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Description <a name="Description"></a>
 
-### `npm run build`
+Full stack Mern application developed for the Dimona municipality.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The app was built on Hackathon in pairs. We took third place!
+Our app helps the citizens of Dimona to make requests for municipality issues
+or send ideas for city improvements. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The site is connected with MongoDB DataBase.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The server is running on Cyclic.
+ 
 
-### `npm run eject`
+ If you want to see the back end code you are welcome to enter: [back end](https://github.com/Skandalev/hackathon-server)
+ 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Demo version on netlify <a name="Demo"></a>
+[Dimona municipality](https://dimona-skandalev.netlify.app/)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## How to use? <a name="use"></a>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### Clone this repository
+$ git clone              
 
-## Learn More
+#### Go into the repository
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+$ npm install
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+$ npm start or $npm run dev (for nodemon)
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Pictures <a name="Pictures"></a>
 
-### Analyzing the Bundle Size
+### Home Page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![](https://res.cloudinary.com/dumgi49os/image/upload/v1666436106/samples/gitHub/%D7%A6%D7%99%D7%9C%D7%95%D7%9D_%D7%9E%D7%A1%D7%9A_2022-10-22_135135_xycifw.png)
 
-### Making a Progressive Web App
+### News and Footer
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+![](https://res.cloudinary.com/dumgi49os/image/upload/v1666436096/samples/gitHub/%D7%A6%D7%99%D7%9C%D7%95%D7%9D_%D7%9E%D7%A1%D7%9A_2022-10-22_135245_kwd4xr.png)
 
-### Advanced Configuration
+### New request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+![](https://res.cloudinary.com/dumgi49os/image/upload/v1666436085/samples/gitHub/%D7%A6%D7%99%D7%9C%D7%95%D7%9D_%D7%9E%D7%A1%D7%9A_2022-10-22_135336_g5ixkx.png)
 
-### Deployment
+## Mobile support
+The WebApp is compatible with devices of all sizes and all OS's, and consistent improvements are being made.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Built with  <a name="Builtwith"></a>
+
+### Front End
+- React
+- Redux
+- Axios
+- Bootstrap
+- Mui
+- Router
+- Formik
+- Yup
+
+### Back End
+
+- Express
+- Mongoose
+- Dotenv
+
+
+
+## To-do   <a name="To-do"></a>
+- Make user system
+- Make master
+- Make the the Axios faster
+
+
+## Author  <a name="Author"></a>
+
+© [Skandalev ](https://github.com/Skandalev)
+  [OfekYehoshua ](https://github.com/OfekYehoshua)
+
+
