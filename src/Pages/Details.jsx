@@ -44,9 +44,9 @@ const Details = (props)=>{
         },
         onSubmit: function (values,{resetForm}) {
 
-           console.log(imageChanger);
+          //  console.log(imageChanger);
            props.setarrayTodata({fullName:values.name,email:values.email, adress:values.password,action: values.profession, picture:imageChanger})
-           console.log(props.arrayTodata);
+          //  console.log(props.arrayTodata);
           alert(`You are registered! Name: ${values.name}. Email: ${values.email}. problem: ${values.profession}. 
              ${values.age}`);
           resetForm({values: ""})
@@ -127,8 +127,8 @@ const Details = (props)=>{
      {/* onBlur={formik.handleBlur} value={formik.values.age} */}
          {/* <input type="file" onChange={formik.handleChange}></input> */}
          {/* <button onClick={()=>uploadImage()}>submit</button> */}
-         {console.log(imageSelected)}
-        {imageChanger? <img src={imageChanger} alt="" srcSet="" style={{width:"10vw"}} />: <h5>  תקחו עד שהתמונה תופיע כאן במקום הכיתוב הזה</h5> }
+       
+        {imageChanger? <img src={imageChanger} alt="" srcSet="" style={{width:"10vw"}} />: <h5>  תחקו עד שהתמונה תופיע כאן במקום הכיתוב הזה</h5> }
         
            
           {formik.touched.age && formik.errors.age && ( 
@@ -136,10 +136,15 @@ const Details = (props)=>{
           )}
         </div>
         <div className='text-center'>
-          <Button className='bg-blue-500 rounded p-3 text-white' type='submit'  variant="contained"  
-          onClick={()=>{
-             
-            props.setSetIsOpen(true)}}>שליחה</Button>
+
+        {imageChanger? <Button className='bg-blue-500 rounded p-3 text-white' type='submit'  variant="contained"  
+          onClick={()=>{   
+            props.setSetIsOpen(true)}}>שליחה</Button>:
+            <Button disabled
+            >שליחה</Button>}
+         
+
+
         </div>
        
       </form>

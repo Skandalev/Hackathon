@@ -10,7 +10,7 @@ function DataBase(props) {
   const getTodos = () => {
     axios.get(`${process.env.REACT_APP_BASE_URL}/api/todos`).then((res) => {
       res.data && setTodoArray(res.data);
-      console.log(res.data);
+      // console.log(res.data);
   
     });
   };
@@ -18,7 +18,7 @@ function DataBase(props) {
  
   const postTodo = () => {
     const todo = props.arrayTodata
-    console.log(todo);
+    // console.log(todo);
     axios.post(`${process.env.REACT_APP_BASE_URL}/api/todos`, todo).then((res) => {
       // res.data && setNewTodo("");
       getTodos()
