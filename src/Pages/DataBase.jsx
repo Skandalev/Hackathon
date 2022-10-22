@@ -8,7 +8,7 @@ function DataBase(props) {
   const [isOpen, setIsOpen] = useState(false);
 
   const getTodos = () => {
-    axios.get("/api/todos").then((res) => {
+    axios.get(`${process.env.REACT_APP_BASE_URL}/api/todos`).then((res) => {
       res.data && setTodoArray(res.data);
       console.log(res.data);
   
@@ -19,17 +19,17 @@ function DataBase(props) {
   const postTodo = () => {
     const todo = props.arrayTodata
     console.log(todo);
-    axios.post("/api/todos", todo).then((res) => {
+    axios.post(`${process.env.REACT_APP_BASE_URL}/api/todos`, todo).then((res) => {
       // res.data && setNewTodo("");
-      
+      getTodos()
     });
-    axios.get("/api/todos").then((res) => {
+    axios.get(`${process.env.REACT_APP_BASE_URL}/api/todos`).then((res) => {
       res.data && setTodoArray(res.data);})
     
   };
   const deleteTodo = (id) => {
     axios
-    .delete(`/api/todos/${id}`)
+    .delete(`${process.env.REACT_APP_BASE_URL}/api/todos/${id}`)
     .then((res) => {
         if (res.data) {
             getTodos();
@@ -38,12 +38,13 @@ function DataBase(props) {
     .catch((err) => console.log(err));
 };
 
-  useEffect(() => {
-    getTodos();
-  }, []);
+  // useEffect(() => {
+  //   getTodos();
+  // }, [isOpen]);
   const addToDo = () => {
-    setIsOpen(true)
     postTodo();
+    setIsOpen(true)
+    
     // let newlist = [...todoArray];
     // setTodoArray(todoArray);
     // if (newTodo.length > 0) {
